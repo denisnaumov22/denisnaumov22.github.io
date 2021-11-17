@@ -1,0 +1,333 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    position: relative;
+}
+
+nav {
+    height: 50px;
+    background-color: #212121;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 70px;
+    margin: 0;
+    list-style: none;
+}
+
+.menu .menu_link {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+    text-decoration: none;
+}
+
+.menu .menu_item {
+    border-right: 2px dotted black;
+    padding-right: 28px;
+}
+
+.subheader {
+    position: absolute;
+    width: 100%;
+    height: 84px;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.subheader .subheader_logo {
+    display: block;
+    max-width: 100%;
+    margin-top: 16px;
+}
+
+.subheader .subheader_official {
+    opacity: 0.5;
+    color: white;
+    /* color: rgba(255, 255, 255, .500); */
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 6px;
+}
+
+.subheader .subheader_call {
+    margin-top: 19px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: right;
+}
+
+.subheader .subheader_phone {
+    display: block;
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: 22px;
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 12px;
+}
+
+.subheader .subheader_btn {
+    margin-top: 19px;
+    width: 172px;
+    height: 46px;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    background-image: linear-gradient(to top, #1eacc7 0%, #4ce2ff 100%);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.promo {
+    min-height: 800px;
+    background: url(../img/bg/2-layers.jpg) center center/cover no-repeat;
+    padding: 150px 0 135px 0;
+}
+
+.promo .promo_header {
+    margin-bottom: 0;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 60px;
+    
+}
+
+.promo .promo_subheader {
+    margin-top: 22px;
+    margin-bottom: 0;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 36px;
+}
+
+.promo .promo_descr {
+    margin-top: 23px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+}
+
+.promo .promo_btn {
+    display: block;
+    margin: 118px auto 0 auto;
+    width: 259px;
+    height: 63px;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to top, #1eacc7 0%, #4ce2ff 100%);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.reasons {
+    padding-bottom: 65px;
+}
+
+.reasons .reasons_btn {
+    margin: 71px auto 0 auto;
+    width: 112px;
+    height: 24px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 25px;
+}
+
+.reasons .reasons_subheader {
+    margin: 38px auto 0 auto;
+    color: #222222;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.reasons .reasons_item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+
+.reasons .reasons_circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-width: 113px;
+    min-height: 113px;
+    background-color: #1eacc7;
+    border-radius: 100%;
+    margin-right: 35px;
+}
+
+.reasons .reasons_icon {
+    position: absolute;
+    margin: 0 auto;
+}
+
+.reasons .reasons_descr {
+    width: 341px;
+    color: #202020;
+    font-size: 15px;
+    font-weight: 300;
+    margin-right: 26px;
+}
+
+.reasons .span {
+    color: #1eacc7;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.poss {
+    min-height: 864px;
+    background: url(../img/bg/pos.png) center center/cover no-repeat;
+    padding-top: 48px;
+}
+
+.poss .poss_btn {
+    margin: 0 auto;
+    width: 112px;
+    height: 24px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 25px;
+    text-transform: uppercase;    
+}
+
+.poss .poss_header {
+    margin: 38px 0 0 0;
+    color: #222222;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.poss .poss_subheader {
+    color: #222222;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+
+.poss .poss_item{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 320px;
+    height: 280px;
+    margin-bottom: 19px;
+}
+
+.poss .poss_item .poss_descr {
+    position: absolute;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    top: 91px;
+}
+
+.poss .poss_circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
+    background-color: #000000;
+    top: 219px;
+}
+
+.choice {
+    height: 499px;
+    background-color: #070716;
+    padding-top: 65px;
+}
+
+.choice .choice_btn {
+    margin: 0 auto;
+    width: 112px;
+    height: 24px;
+    background-color: #ffffff;
+    color: #070716;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.choice .choice_header {
+    margin-top: 32px;
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.choice .choice_subheader {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.choice .choice_car {
+    display: block;
+    margin: 56px auto 0 auto;
+}
+
+.choice_2 {
+    height: 397px;
+    background: url(../img/bg/pos.png) center center/cover no-repeat;
+    padding-top: 219px;
+}
+
+.choice_2 .choice_quote {
+    margin: 0 auto;
+    width: 297px;
+    color: #222222;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: center;
+}
