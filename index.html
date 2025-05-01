@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Wedding Builder</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Wedding Builder</h1>
+        
+        <div class="tabs">
+            <button class="tab active" data-tab="elopment">Elopment</button>
+            <button class="tab" data-tab="micro">Micro wedding</button>
+            <button class="tab" data-tab="minimony">Minimony</button>
+            <button class="tab" data-tab="all-inclusive">All inclusive</button>
+        </div>
+        
+        <div class="tab-content active" id="elopment">
+            <div class="services">
+                <div class="service-group">
+                    <h3>Guests</h3>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="3" class="slider" id="guests-elopment">
+                        <div class="slider-values">
+                            <span class="slider-value" data-value="1" data-price="1000">2</span>
+                            <span class="slider-value" data-value="2" data-price="1000">4</span>
+                            <span class="slider-value active" data-value="3" data-price="1000">6</span>
+                            <span class="slider-value" data-value="4" data-price="2000">8</span>
+                            <span class="slider-value" data-value="5" data-price="3000">10</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Venue</h3>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="venue-elopment" id="venue-park-elopment" value="park" data-price="1000" checked>
+                            <label for="venue-park-elopment">
+                                <span>Mendocino</span>
+                                <span class="price">$1000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="venue-elopment" id="venue-beach-elopment" value="beach" data-price="1500">
+                            <label for="venue-beach-elopment">
+                                <span>Malibu</span>
+                                <span class="price">$1500</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="venue-elopment" id="venue-mansion-elopment" value="mansion" data-price="2000">
+                            <label for="venue-mansion-elopment">
+                                <span>Sunset</span>
+                                <span class="price">$2000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Photograph</h3>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="photo-elopment" id="photo-basic-elopment" value="basic" data-price="1000" checked>
+                            <label for="photo-basic-elopment">
+                                <span>Base (2 hours)</span>
+                                <span class="price">$1000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="photo-elopment" id="photo-standard-elopment" value="standard" data-price="1500">
+                            <label for="photo-standard-elopment">
+                                <span>Standard (4 hours)</span>
+                                <span class="price">$1500</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="photo-elopment" id="photo-premium-elopment" value="premium" data-price="3000">
+                            <label for="photo-premium-elopment">
+                                <span>Premium (full day + photobook)</span>
+                                <span class="price">$3000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Additional Services</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="music-elopment" data-price="3000">
+                            <label for="music-elopment">
+                                <span>Music band</span>
+                                <span class="price">$3000</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="flowers-elopment" data-price="500">
+                            <label for="flowers-elopment">
+                                <span>Flowers arc</span>
+                                <span class="price">$500</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="cake-elopment" data-price="1500">
+                            <label for="cake-elopment">
+                                <span>Wedding cake</span>
+                                <span class="price">$1500</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="bar-elopment" data-price="2000">
+                            <label for="bar-elopment">
+                                <span>Open bar (2 hours)</span>
+                                <span class="price">$2000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="total">
+                <h2>Elopment Package</h2>
+                <div class="total-item guests">
+                    <span class="total-label">Guests:</span>
+                    <span class="total-value" id="guests-total-elopment">$1000</span>
+                </div>
+                <div class="total-item venue">
+                    <span class="total-label">Venue:</span>
+                    <span class="total-value" id="venue-total-elopment">$1000</span>
+                </div>
+                <div class="total-item photo">
+                    <span class="total-label">Photography:</span>
+                    <span class="total-value" id="photo-total-elopment">$1000</span>
+                </div>
+                <div class="total-item dop-services">
+                    <span class="total-label">Additional Services:</span>
+                    <span class="total-value" id="services-total-elopment">$0</span>
+                </div>
+                <div class="total-price">
+                    <span>Total:</span>
+                    <span id="elopment-total">$3000</span>
+                </div>
+                <button class="place-order-btn">I want this</button>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="micro">
+            <div class="services">
+                <div class="service-group">
+                    <h3>Guests</h3>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="3" class="slider" id="guests-micro">
+                        <div class="slider-values">
+                            <span class="slider-value" data-value="1" data-price="2000">2</span>
+                            <span class="slider-value" data-value="2" data-price="2000">4</span>
+                            <span class="slider-value active" data-value="3" data-price="2000">6</span>
+                            <span class="slider-value" data-value="4" data-price="4000">8</span>
+                            <span class="slider-value" data-value="5" data-price="6000">10</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Venue</h3>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="venue-micro" id="venue-park-micro" value="park" data-price="2000" checked>
+                            <label for="venue-park-micro">
+                                <span>Mendocino</span>
+                                <span class="price">$2000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="venue-micro" id="venue-beach-micro" value="beach" data-price="3000">
+                            <label for="venue-beach-micro">
+                                <span>Malibu</span>
+                                <span class="price">$3000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="venue-micro" id="venue-mansion-micro" value="mansion" data-price="4000">
+                            <label for="venue-mansion-micro">
+                                <span>Sunset</span>
+                                <span class="price">$4000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Photograph</h3>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="photo-micro" id="photo-basic-micro" value="basic" data-price="2000" checked>
+                            <label for="photo-basic-micro">
+                                <span>Base (2 hours)</span>
+                                <span class="price">$2000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="photo-micro" id="photo-standard-micro" value="standard" data-price="3000">
+                            <label for="photo-standard-micro">
+                                <span>Standard (4 hours)</span>
+                                <span class="price">$3000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="photo-micro" id="photo-premium-micro" value="premium" data-price="6000">
+                            <label for="photo-premium-micro">
+                                <span>Premium (full day + photobook)</span>
+                                <span class="price">$6000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Additional Services</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="music-micro" data-price="6000">
+                            <label for="music-micro">
+                                <span>Music band</span>
+                                <span class="price">$6000</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="flowers-micro" data-price="1000">
+                            <label for="flowers-micro">
+                                <span>Flowers arc</span>
+                                <span class="price">$1000</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="cake-micro" data-price="3000">
+                            <label for="cake-micro">
+                                <span>Wedding cake</span>
+                                <span class="price">$3000</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="bar-micro" data-price="4000">
+                            <label for="bar-micro">
+                                <span>Open bar (2 hours)</span>
+                                <span class="price">$4000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="total">
+                <h2>Micro Wedding Package</h2>
+                <div class="total-item guests">
+                    <span class="total-label">Guests:</span>
+                    <span class="total-value" id="guests-total-micro">$2000</span>
+                </div>
+                <div class="total-item venue">
+                    <span class="total-label">Venue:</span>
+                    <span class="total-value" id="venue-total-micro">$2000</span>
+                </div>
+                <div class="total-item photo">
+                    <span class="total-label">Photography:</span>
+                    <span class="total-value" id="photo-total-micro">$2000</span>
+                </div>
+                <div class="total-item dop-services">
+                    <span class="total-label">Additional Services:</span>
+                    <span class="total-value" id="services-total-micro">$0</span>
+                </div>
+                <div class="total-price">
+                    <span>Total:</span>
+                    <span id="micro-total">$6000</span>
+                </div>
+                <button class="place-order-btn">Place Order</button>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="minimony">
+            <div class="services">
+                <div class="service-group">
+                    <h3>Guests</h3>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="3" class="slider" id="guests-minimony">
+                        <div class="slider-values">
+                            <span class="slider-value" data-value="1" data-price="3000">2</span>
+                            <span class="slider-value" data-value="2" data-price="3000">4</span>
+                            <span class="slider-value active" data-value="3" data-price="3000">6</span>
+                            <span class="slider-value" data-value="4" data-price="6000">8</span>
+                            <span class="slider-value" data-value="5" data-price="9000">10</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Venue</h3>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="venue-minimony" id="venue-park-minimony" value="park" data-price="3000" checked>
+                            <label for="venue-park-minimony">
+                                <span>Mendocino</span>
+                                <span class="price">$3000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="venue-minimony" id="venue-beach-minimony" value="beach" data-price="4000">
+                            <label for="venue-beach-minimony">
+                                <span>Malibu</span>
+                                <span class="price">$4000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="venue-minimony" id="venue-mansion-minimony" value="mansion" data-price="5000">
+                            <label for="venue-mansion-minimony">
+                                <span>Sunset</span>
+                                <span class="price">$5000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Photograph</h3>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="photo-minimony" id="photo-basic-minimony" value="basic" data-price="3000" checked>
+                            <label for="photo-basic-minimony">
+                                <span>Base (2 hours)</span>
+                                <span class="price">$3000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="photo-minimony" id="photo-standard-minimony" value="standard" data-price="4500">
+                            <label for="photo-standard-minimony">
+                                <span>Standard (4 hours)</span>
+                                <span class="price">$4500</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="photo-minimony" id="photo-premium-minimony" value="premium" data-price="9000">
+                            <label for="photo-premium-minimony">
+                                <span>Premium (full day + photobook)</span>
+                                <span class="price">$9000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Additional Services</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="music-minimony" data-price="9000">
+                            <label for="music-minimony">
+                                <span>Music band</span>
+                                <span class="price">$9000</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="flowers-minimony" data-price="1500">
+                            <label for="flowers-minimony">
+                                <span>Flowers arc</span>
+                                <span class="price">$1500</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="cake-minimony" data-price="4500">
+                            <label for="cake-minimony">
+                                <span>Wedding cake</span>
+                                <span class="price">$4500</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="bar-minimony" data-price="6000">
+                            <label for="bar-minimony">
+                                <span>Open bar (2 hours)</span>
+                                <span class="price">$6000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="total">
+                <h2>Minimony Package</h2>
+                <div class="total-item guests">
+                    <span class="total-label">Guests:</span>
+                    <span class="total-value" id="guests-total-minimony">$3000</span>
+                </div>
+                <div class="total-item venue">
+                    <span class="total-label">Venue:</span>
+                    <span class="total-value" id="venue-total-minimony">$3000</span>
+                </div>
+                <div class="total-item photo">
+                    <span class="total-label">Photography:</span>
+                    <span class="total-value" id="photo-total-minimony">$3000</span>
+                </div>
+                <div class="total-item dop-services">
+                    <span class="total-label">Additional Services:</span>
+                    <span class="total-value" id="services-total-minimony">$0</span>
+                </div>
+                <div class="total-price">
+                    <span>Total:</span>
+                    <span id="minimony-total">$9000</span>
+                </div>
+                <button class="place-order-btn">Place Order</button>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="all-inclusive">
+            <div class="services">
+                <div class="service-group">
+                    <h3>Guests</h3>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="3" class="slider" id="guests-all-inclusive">
+                        <div class="slider-values">
+                            <span class="slider-value" data-value="1" data-price="4000">2</span>
+                            <span class="slider-value" data-value="2" data-price="4000">4</span>
+                            <span class="slider-value active" data-value="3" data-price="4000">6</span>
+                            <span class="slider-value" data-value="4" data-price="8000">8</span>
+                            <span class="slider-value" data-value="5" data-price="12000">10</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Venue</h3>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="venue-all-inclusive" id="venue-park-all-inclusive" value="park" data-price="4000" checked>
+                            <label for="venue-park-all-inclusive">
+                                <span>Mendocino</span>
+                                <span class="price">$4000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="venue-all-inclusive" id="venue-beach-all-inclusive" value="beach" data-price="5000">
+                            <label for="venue-beach-all-inclusive">
+                                <span>Malibu</span>
+                                <span class="price">$5000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="venue-all-inclusive" id="venue-mansion-all-inclusive" value="mansion" data-price="6000">
+                            <label for="venue-mansion-all-inclusive">
+                                <span>Sunset</span>
+                                <span class="price">$6000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Photograph</h3>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="photo-all-inclusive" id="photo-basic-all-inclusive" value="basic" data-price="4000" checked>
+                            <label for="photo-basic-all-inclusive">
+                                <span>Base (2 hours)</span>
+                                <span class="price">$4000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="photo-all-inclusive" id="photo-standard-all-inclusive" value="standard" data-price="6000">
+                            <label for="photo-standard-all-inclusive">
+                                <span>Standard (4 hours)</span>
+                                <span class="price">$6000</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="photo-all-inclusive" id="photo-premium-all-inclusive" value="premium" data-price="12000">
+                            <label for="photo-premium-all-inclusive">
+                                <span>Premium (full day + photobook)</span>
+                                <span class="price">$12000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-group">
+                    <h3>Additional Services</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="music-all-inclusive" data-price="12000">
+                            <label for="music-all-inclusive">
+                                <span>Music band</span>
+                                <span class="price">$12000</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="flowers-all-inclusive" data-price="2000">
+                            <label for="flowers-all-inclusive">
+                                <span>Flowers arc</span>
+                                <span class="price">$2000</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="cake-all-inclusive" data-price="6000">
+                            <label for="cake-all-inclusive">
+                                <span>Wedding cake</span>
+                                <span class="price">$6000</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="bar-all-inclusive" data-price="8000">
+                            <label for="bar-all-inclusive">
+                                <span>Open bar (2 hours)</span>
+                                <span class="price">$8000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="total">
+                <h2>All Inclusive Package</h2>
+                <div class="total-item guests">
+                    <span class="total-label">Guests:</span>
+                    <span class="total-value" id="guests-total-all-inclusive">$4000</span>
+                </div>
+                <div class="total-item venue">
+                    <span class="total-label">Venue:</span>
+                    <span class="total-value" id="venue-total-all-inclusive">$4000</span>
+                </div>
+                <div class="total-item photo">
+                    <span class="total-label">Photography:</span>
+                    <span class="total-value" id="photo-total-all-inclusive">$4000</span>
+                </div>
+                <div class="total-item dop-services">
+                    <span class="total-label">Additional Services:</span>
+                    <span class="total-value" id="services-total-all-inclusive">$0</span>
+                </div>
+                <div class="total-price">
+                    <span>Total:</span>
+                    <span id="all-inclusive-total">$12000</span>
+                </div>
+                <button class="place-order-btn">Place Order</button>
+            </div>
+        </div>
+        
+        <div class="contact-form" style="display: none;">
+            <div class="order-summary">
+                <h2>Your Order Summary</h2>
+                <div class="summary-package">
+                    <span class="summary-label">Package:</span>
+                    <span class="summary-value" id="summary-package">Elopment</span>
+                </div>
+                <div class="summary-details">
+                    <div class="summary-item">
+                        <span class="summary-label">Guests:</span>
+                        <span class="summary-value" id="summary-guests">6</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Venue:</span>
+                        <span class="summary-value" id="summary-venue">Mendocino</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Photography:</span>
+                        <span class="summary-value" id="summary-photo">Base (2 hours)</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Additional Services:</span>
+                        <span class="summary-value" id="summary-services">None</span>
+                    </div>
+                </div>
+                <div class="summary-total">
+                    <button class="back-btn">Change package</button>
+                    <div class="summary-total-wrapper">
+                        <span class="summary-label">Total:</span>
+                    <span class="summary-value" id="summary-total">$3000</span>
+                    </div>
+                </div>
+            </div>
+            <h2>Contact Information</h2>
+            <form action="">
+                <div class="fields-wrapper">
+                    <div class="form-group">
+                        <label for="name" style="display: none;">Name</label>
+                        <input type="text" id="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" style="display: none;">Phone</label>
+                        <input type="tel" id="phone" required placeholder="Your Phone">
+                    </div>
+                </div>
+                <div class="fields-wrapper">
+                    <div class="form-group">
+                        <label for="email" style="display: none;">Email</label>
+                        <input type="email" id="email" required placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="date" style="display: none;">Wedding Date</label>
+                        <input type="text" id="date" required placeholder="Wedding Date" onfocus="(this.type='date')" onblur="(this.type='text')">
+                    </div>
+                </div>
+                <button class="submit-btn">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
