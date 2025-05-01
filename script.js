@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners for all inputs
     document.querySelectorAll('.slider').forEach(slider => {
         slider.addEventListener('input', function() {
-            const packageId = this.id.split('-')[1];
+            const packageId = this.id.replace('guests-', '');
             
             // Update active class for slider values
             const sliderValues = this.nextElementSibling.querySelectorAll('.slider-value');
@@ -109,14 +109,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.querySelectorAll('input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', function() {
-            const packageId = this.name.split('-')[1];
+            const packageId = this.name.replace('venue-', '').replace('photo-', '');
             updatePackageTotal(packageId);
         });
     });
     
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', function() {
-            const packageId = this.id.split('-')[1];
+            const packageId = this.id.replace('music-', '')
+                                    .replace('flowers-', '')
+                                    .replace('cake-', '')
+                                    .replace('bar-', '');
             updatePackageTotal(packageId);
         });
     });
